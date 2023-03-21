@@ -1,0 +1,113 @@
+This is html:
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Form</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="login-box">
+		<h1>Login</h1>
+		<form>
+			<label for="username">Username</label>
+			<input type="text" id="username" placeholder="Enter Username">
+			<label for="password">Password</label>
+			<input type="password" id="password" placeholder="Enter Password">
+			<input type="button" value="Login" onclick="validate()">
+		</form>
+	</div>
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
+
+-------------------------------------------------------------------
+
+This is css:
+
+body {
+	font-family: sans-serif;
+	background-color: #f5f5f5;
+}
+
+.login-box {
+	width: 320px;
+	height: 380px;
+	background-color: #fff;
+	color: #000;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 70px 30px;
+	box-sizing: border-box;
+	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+	border-radius: 10px;
+}
+
+h1 {
+	margin: 0;
+	padding: 0 0 20px;
+	text-align: center;
+	font-size: 28px;
+	color: #000;
+}
+
+form {
+	margin: 0;
+	padding: 0;
+}
+
+label {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	display: block;
+}
+
+input {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+	border: none;
+	border-bottom: 1px solid #000;
+	background-color: transparent;
+	outline: none;
+	height: 40px;
+	color: #000;
+	font-size: 16px;
+}
+
+input[type="button"] {
+	border: none;
+	outline: none;
+	height: 40px;
+	background-color: #000;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 20px;
+	cursor: pointer;
+}
+
+input[type="button"]:hover {
+	background-color: #00bfff;
+	color: #fff;
+}
+
+------------------------------------------------------------------------
+
+And this is javascript:
+
+function validate() {
+	var username = document.getElementById("username").value;
+	var password = document.getElementById("password").value;
+
+	if (username == "Admin" && password == "Admin!@#") {
+		window.location.href = "welcome.html";
+	} else {
+		alert("Incorrect username or password!");
+	}
+}
